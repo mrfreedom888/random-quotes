@@ -1,17 +1,14 @@
-const quotes = [
-  "Ваш час обмежений, тому не витрачайте його, намагаючись жити чужим життям. - Стів Джобс",
-  "Працювати потрібно не 12 годин на добу, а головою! - Стів Джобс",
-  "Немає сенсу наймати тямущих людей, а потім указувати, що їм робити. - Стів Джобс",
-];
+import quotes from "./quotes.js";
 
 const quoteElement = document.getElementById("quote");
 const generateBnt = document.getElementById("generate-btn");
 
 function geterateRandomQuote() {
-  console.log("THIS FUNCTIOTN WAS JUST CALLED");
+  // console.log("THIS FUNCTIOTN WAS JUST CALLED");
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const randomQuote = quotes[randomIndex];
-  quoteElement.textContent = randomQuote;
+  const quote = `<em>'${randomQuote.quote}'</em><br>${randomQuote.author}`;
+  quoteElement.innerHTML = quote;
 }
 
 generateBnt.addEventListener("click", geterateRandomQuote);
